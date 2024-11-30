@@ -1,0 +1,13 @@
+#bodyTodo {
+  background-color: aqua;
+}
+
+#texBox {
+  margin: 1em 40%;
+  display: block;
+  /* background-color: black; */
+}
+#btn {
+  margin:1em 46%;
+  padding: 0.5em 1em;
+}
