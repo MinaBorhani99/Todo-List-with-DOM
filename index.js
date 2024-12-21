@@ -1,37 +1,70 @@
+// call & create
+let btnAdd = document.getElementById("btn");
+let inputTask = document.getElementById("texBox");
 let bodyTodo = document.getElementById("bodyTodo");
-let texBox = document.getElementById("texBox");
-let btn = document.getElementById("btn");
 
-btn.onclick = function () {
-  // creat task
-  let labale = document.createElement("label");
-  let tex = texBox.value;
-  labale.textContent = tex;
-  labale.style.display = "block";
-  labale.setAttribute("id", "task");
-  bodyTodo.insertBefore(labale, btn);
-  // add trash btn
-  let imgbic = document.createElement("img");
-  imgbic.setAttribute("src", "/img/trash.png");
-  imgbic.setAttribute("class", "trash");
-  imgbic.style.position = "absolute";
-  labale.appendChild(imgbic);
-  // add edit btn
-  let imgedit = document.createElement("img");
-  imgedit.setAttribute("src", "/img/edit.png");
-  imgedit.setAttribute("class", "edit");
-  imgedit.style.position = "absolute";
+let ultask = document.createElement("ul");
+
+bodyTodo.appendChild(ultask);
+
+// button 
+btnAdd.onclick = function () {
   // add task
-  labale.appendChild(imgedit);
-  // remove task
-  imgbic.onclick = function () {
-    labale.remove();
-  };
-  //edit task
-  imgedit.onclick = function () {
-    
-  };
+  let textLli = inputTask.value.trim();
+  if (textLli === ""){
+    alert("empty!");
+    return;
+  }
+  let liTask = document.createElement("li");
+  liTask.setAttribute("class" , "li-task");
 
-  // empety input
-  texBox.value = "";
+  // Add 
+  let tastText = document.createElement("span")
+  tastText.textContent = textLli;
+  liTask.appendChild(tastText);
+
+  // add edit
+  const taskEdit = document.createElement("button");
+  taskEdit.setAttribute = ("id", "task-Edit" );
+  taskEdit.textContent = "Edit";
+  liTask.appendChild(taskEdit);
+
+   // add delete
+   const taskDelete = document.createElement("button");
+   taskDelete.textContent = "Delete";
+   liTask.appendChild(taskDelete);
+
+   // add item to list
+   ultask.appendChild(liTask);
+
+   // empety input
+  inputTask.value = "";
+
+
+  // add delete Button
+   taskDelete.onclick = ()=> { liTask.remove(); }
+
+
+
+   // add Edit Button
+  taskEdit.onclick = () => {
+    if (taskEdit.textContent === "Edit"){
+      let editInput = document.createElement ("input");
+      editInput.type = "text";
+      editInput.value = tastText.textContent;
+      liTask.insertBefore(editInput, tastText);
+      liTask.removeChild(tastText);
+      taskEdit.textContent = "Save";
+    }else{
+      let updateText = liTask.querySelector("input").value.trim();
+      if (updateText === ""){
+        alert("empty!!!");
+        return;
+      }
+      tastText.textContent = updateText;
+      liTask.insertBefore(tastText , liTask.querySelector("input"));
+      liTask.removeChild(liTask.querySelector("input"));
+      taskEdit.textContent = "Edit";
+    }
+  }
 };

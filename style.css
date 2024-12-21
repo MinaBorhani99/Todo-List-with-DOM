@@ -1,29 +1,14 @@
-#bodyTodo {
-  background-color: aqua;
+body {
+  background-color: #3D7577;
 }
+#inputBody{
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: repeat(4 , 1fr);
 
-#texBox {
-  margin: 1em 40%;
-  display: block;
-  /* background-color: black; */
-}
-#btn {
-  margin: 1em 46%;
-  padding: 0.5em 1em;
-}
-#task {
-  background-color: antiquewhite;
-  width: 10em;
-  margin: 1em 40%;
-  padding: 0.5em 0.5em;
-}
-#task .trash {
-  margin-left: 4em;
-  width: 1.5em;
-  height: 1.5em;
-}
-#task .edit {
-  margin-left: 6em;
-  width: 1.5em;
-  height: 1.5em;
+
+  padding-block: 1rem;
+  margin-block: 1rem;
+  width: min(25%, 50rem);
+  margin-inline: auto ;
 }
