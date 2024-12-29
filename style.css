@@ -1,54 +1,61 @@
 body {
   background-color: #1d2739;
 }
+#bodyTodo {
+  margin: 2em auto;
+}
 #inputBody {
   display: grid;
   gap: 1.5em;
-  grid-template-columns: repeat(4, 1fr);
-
-  padding-block: 1rem;
-  margin-block: 1rem;
-  width: min(25%, 50rem);
+  grid-template-columns: 2fr 1fr;
+  padding-block: auto;
+  margin-block: auto;
+  width: 25%;
   margin-inline: auto;
+  justify-items: center;
+  justify-content: center;
 }
 #texBox {
   border: none;
   height: 2rem;
   background-color: #4b6382;
   color: #cdd5db;
-  padding: 0.2rem 1rem;
+  width: 15em;
+  padding: 0.2em 1em;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 1em;
 }
-
 #btn {
   background: #4b6382;
   color: #cdd5db;
   border: none;
-  border-radius: 20rem;
+  width: 3em;
+  border-radius: 20em;
   margin-left: -18px;
-  font-size: 1.5rem;
+  font-size: 1.5em;
+}
+ul {
+  display: inline;
 }
 .li-task {
   background: #a4b5c4;
   color: #071739;
   border-radius: 30px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  padding-block: 1rem;
-  margin-block: 1rem;
-  width: min(25%, 50rem);
-  margin-inline: 27rem;
+  grid-template-columns: 3fr 1fr 1fr;
+  padding-block: 1em;
+  margin-block: 1em;
+  width: 50%;
+  margin-inline: auto;
 }
 .li-task span {
-  width: 9rem;
-  padding: 0 1rem;
+  width: auto;
+  padding: 0 1em;
 }
 .li-task button {
   background-color: #111822;
   color: #cdd5db;
-  width: 4rem;
+  width: 4em;
   border: none;
   border-radius: 50px;
 }
@@ -56,6 +63,6 @@ body {
   border: none;
   border-radius: 50px;
   background: #a4b5c4;
-  padding: 0 1rem;
-  width: 9rem;
+  padding: 0 1em;
+  width: auto;
 }
